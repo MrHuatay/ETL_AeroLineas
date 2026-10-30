@@ -5,8 +5,8 @@
   <SchemaVersion>9.0.1.0</SchemaVersion>
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <Database>
-    <Name>ETL_AereoLineas.database</Name>
-    <FullPath>ETL_AereoLineas.database</FullPath>
+    <Name>ETL_AeroLineas.database</Name>
+    <FullPath>ETL_AeroLineas.database</FullPath>
   </Database>
   <DataSources />
   <DataSourceViews />
@@ -14,19 +14,19 @@
     <Manifest>
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
-          <SSIS:Property SSIS:Name="ID">{4b51d9e0-ec96-4adb-a8df-bc32a91145f8}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">ETL_AereoLineas</SSIS:Property>
+          <SSIS:Property SSIS:Name="ID">{1bb2e863-5a0d-4a40-a9ad-0d4f36cafdd4}</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">ETL_AeroLineas</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionComments">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="CreationDate">2026-10-29T18:49:38.7889009-05:00</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreationDate">2026-10-29T19:50:48.89526-05:00</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorName">E-305-PC01\UCV</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">E-305-PC01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+8YZN7YqFkGJyZ3Rzgq+XwAAAAACAAAAAAAQZgAAAAEAACAAAABVIL6Q/bj+0c5ziYX/NjCIdMUxyiYMb63MlobYUw5YIwAAAAAOgAAAAAIAACAAAADZA9RYC5PCVkAIUn/uFvT/bG4Xe4MLkyTZk71jPpyBp5AAAABw/o0T3UfTJ7JvTGI/gl+ZaDZljJBL/7y7uO6bVhdo2gHGU6/7+ufnTbN98gZCShKdO0XZ7+Dv63dP0/tWWmov0hlMRrwbUkfK9dphbuTi/nT1GEylWqwLpq0SsBW0GLCcVY5MojFWuHnS6BfGdSGd7thg4zJEWA04mroyoZd3Qs8EHuhOrH8a15RTVzKKliJAAAAA2Sr83SQ8Mu4boisJHYB8uZboI8XcDtZMaf13W+KxNzrDEB4Nmk7m0+sEldXeifbFhplTeAzIQVyVEWvLOPKH+w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+8YZN7YqFkGJyZ3Rzgq+XwAAAAACAAAAAAAQZgAAAAEAACAAAADIzbkpgoH7D/VOjTgzmTO7Zsd81lx4F5o5YQRv4a62IQAAAAAOgAAAAAIAACAAAAB7ZGjD90RPrU0vbkaWDOHBDS0LC6fuqd3T8n2mWMM+F5AAAACg3a28lPfFM+sY3uQ2T6Kul22EZL0ZdtDmmZO5i7GeURa03oirwqNtdbZGQrDY+/+nlw3GVW0IAxUIIV1xGq1Qg6Xru9QY8pjWzB5MnzMDApLbs8D9GwtNzhUX5yrifj5/MOzhm6lHGEa/NxRhwHPIw4AXWcRBDh4c5lkevGc6C4xrDXNds/pEnZj9PDLgz1FAAAAA64VXQ+kbJEU+sHXbGdDGLUoh93Y/pI72s8NUl5GtmHriaB5oOGnc5W4c9R/vbTm9dyHVCzwkonMpIiLoZDak2Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -38,14 +38,14 @@
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{21741926-4866-4D2A-80BD-19D0786B1798}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{57578BA9-CC3F-42E4-B750-FB0F5EFC9786}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{EA8F94B6-0B0F-4BA6-B847-64E8526F69C9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{97BD4A38-A5B1-4E80-B09E-C84EC126D2B7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
