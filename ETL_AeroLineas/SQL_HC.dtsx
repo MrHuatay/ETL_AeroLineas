@@ -1,0 +1,957 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2026 7:50:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="E-305-PC01"
+  DTS:CreatorName="E-305-PC01\UCV"
+  DTS:DTSID="{C3B37DCA-015C-4852-BB67-9497BA4C6302}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="SQL_HC"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A6E27E35-8AFD-47D2-92A0-D4BC05DCD1AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A59C19E1-3508-4F9F-9A26-76B8E52D8CC1}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\proyectos\ETL_AeroLineas\HC\BDAeroLineas.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[E-305-PC11.BDAerolineas.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{27FCCEBB-967F-47CF-B03A-BB93CEED19FE}"
+      DTS:ObjectName="E-305-PC11.BDAerolineas.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=E-305-PC11;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Application Name=SSIS-SQL_HC-{27FCCEBB-967F-47CF-B03A-BB93CEED19FE}E-305-PC11.BDAerolineas.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx2OBzq+KMkWvIuAAOTkv8QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABq0uTIgtxi8azdlHdx5TvQaXQ+xYJQM5MGs8QKQN/yeAAAAAAOgAAAAAIAACAAAAD2ktYysBD8djgG5wXZM3WdTwUKzuJ2NTAt4C+TmHe4URAAAAA/CtaE05ZeVNhdEEm+W1QeQAAAAOc/WUp+b2+bNx0MWb0n93MG5kkQAWxxFkwda44C/DAQO84J0wwzUlpjLfNy3L26U7PPu0uPQoF7AiyW9Nnbf4c</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL_BDAeroLineas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{0C5BBE15-521F-4A68-A791-10B0BFF6F683}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL_BDAeroLineas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Destino de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Destino de Excel"
+              name="Destino HC Dim Aeropuerto"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">DimAeropuerto$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de Excel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[IdAeropuertoPK]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="IdAeropuertoPK"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[IdAeropuertoPK]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[IdAeropuertoPK]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[CodigoIATA]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CodigoIATA"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[CodigoIATA]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CodigoIATA]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[NombreAeropuerto]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="NombreAeropuerto"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[NombreAeropuerto]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[NombreAeropuerto]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Ciudad"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[Ciudad]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Ciudad]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[Departamento]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Departamento"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[Departamento]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Departamento]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].Columns[CapacidadOperativaHora]"
+                      cachedDataType="i4"
+                      cachedName="CapacidadOperativaHora"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[CapacidadOperativaHora]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CapacidadOperativaHora]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[IdAeropuertoPK]"
+                      dataType="wstr"
+                      length="255"
+                      name="IdAeropuertoPK" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[CodigoIATA]"
+                      dataType="wstr"
+                      length="255"
+                      name="CodigoIATA" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[NombreAeropuerto]"
+                      dataType="wstr"
+                      length="255"
+                      name="NombreAeropuerto" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[Departamento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Departamento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel].ExternalColumns[CapacidadOperativaHora]"
+                      dataType="wstr"
+                      length="255"
+                      name="CapacidadOperativaHora" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Outputs[Salida de error de destino de Excel]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de Excel"
+                  synchronousInputId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Outputs[Salida de error de destino de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Outputs[Salida de error de destino de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Outputs[Salida de error de destino de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Outputs[Salida de error de destino de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Destino de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Destino de Excel"
+              name="Destino HC DimAeronave"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">DimAeronave$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de Excel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].Columns[IdAeronavePK]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="IdAeronavePK"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[IdAeronavePK]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IdAeronavePK]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].Columns[Matricula]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Matricula"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[Matricula]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Matricula]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].Columns[Modelo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Modelo"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[Modelo]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Modelo]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].Columns[CapacidadPasajeros]"
+                      cachedDataType="i4"
+                      cachedName="CapacidadPasajeros"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[CapacidadPasajeros]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CapacidadPasajeros]" />
+                    <inputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].Columns[ConsumoPromedioGalHora]"
+                      cachedDataType="numeric"
+                      cachedName="ConsumoPromedioGalHora"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[ConsumoPromedioGalHora]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ConsumoPromedioGalHora]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[IdAeronavePK]"
+                      dataType="wstr"
+                      length="255"
+                      name="IdAeronavePK" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[Matricula]"
+                      dataType="wstr"
+                      length="255"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[Modelo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Modelo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[CapacidadPasajeros]"
+                      dataType="wstr"
+                      length="255"
+                      name="CapacidadPasajeros" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel].ExternalColumns[ConsumoPromedioGalHora]"
+                      dataType="wstr"
+                      length="255"
+                      name="ConsumoPromedioGalHora" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Outputs[Salida de error de destino de Excel]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de Excel"
+                  synchronousInputId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Outputs[Salida de error de destino de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Outputs[Salida de error de destino de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Outputs[Salida de error de destino de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Outputs[Salida de error de destino de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL_BDAeroLineas\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimAeronave]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[E-305-PC11.BDAerolineas.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[E-305-PC11.BDAerolineas.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IdAeronavePK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeronavePK]"
+                      length="6"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IdAeronavePK]"
+                      name="IdAeronavePK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Matricula]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Matricula]"
+                      length="15"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Matricula]"
+                      name="Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Modelo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Modelo]"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Modelo]"
+                      name="Modelo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadPasajeros]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      name="CapacidadPasajeros"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ConsumoPromedioGalHora]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      name="ConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeronavePK]"
+                      dataType="wstr"
+                      length="6"
+                      name="IdAeronavePK" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Matricula]"
+                      dataType="wstr"
+                      length="15"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Modelo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Modelo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadPasajeros]"
+                      dataType="i4"
+                      name="CapacidadPasajeros" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      name="ConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IdAeronavePK]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IdAeronavePK]"
+                      name="IdAeronavePK" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Matricula]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Matricula]"
+                      name="Matricula" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Modelo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Modelo]"
+                      name="Modelo" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      name="CapacidadPasajeros" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      name="ConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimAeropuerto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[E-305-PC11.BDAerolineas.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[E-305-PC11.BDAerolineas.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[IdAeropuertoPK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeropuertoPK]"
+                      length="6"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[IdAeropuertoPK]"
+                      name="IdAeropuertoPK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CodigoIATA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[CodigoIATA]"
+                      length="3"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CodigoIATA]"
+                      name="CodigoIATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[NombreAeropuerto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreAeropuerto]"
+                      length="100"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[NombreAeropuerto]"
+                      name="NombreAeropuerto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Departamento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[Departamento]"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[Departamento]"
+                      name="Departamento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CapacidadOperativaHora]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadOperativaHora]"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].Columns[CapacidadOperativaHora]"
+                      name="CapacidadOperativaHora"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeropuertoPK]"
+                      dataType="wstr"
+                      length="6"
+                      name="IdAeropuertoPK" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[CodigoIATA]"
+                      dataType="wstr"
+                      length="3"
+                      name="CodigoIATA" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreAeropuerto]"
+                      dataType="wstr"
+                      length="100"
+                      name="NombreAeropuerto" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="50"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[Departamento]"
+                      dataType="wstr"
+                      length="50"
+                      name="Departamento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadOperativaHora]"
+                      dataType="i4"
+                      name="CapacidadOperativaHora" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[IdAeropuertoPK]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[IdAeropuertoPK]"
+                      name="IdAeropuertoPK" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[CodigoIATA]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[CodigoIATA]"
+                      name="CodigoIATA" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[NombreAeropuerto]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[NombreAeropuerto]"
+                      name="NombreAeropuerto" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[Departamento]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[Departamento]"
+                      name="Departamento" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[CapacidadOperativaHora]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[CapacidadOperativaHora]"
+                      name="CapacidadOperativaHora" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL_BDAeroLineas.Paths[Salida de origen de OLE DB]"
+              endId="Package\ETL_BDAeroLineas\Destino HC DimAeronave.Inputs[Entrada de destino de Excel]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL_BDAeroLineas\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\ETL_BDAeroLineas.Paths[Salida de origen de OLE DB1]"
+              endId="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto.Inputs[Entrada de destino de Excel]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL_BDAeroLineas\Origen de OLE DB 1.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\ETL_BDAeroLineas"
+          TopLeft="363,161" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL_BDAeroLineas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\ETL_BDAeroLineas\Origen de OLE DB"
+          TopLeft="40,340" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\ETL_BDAeroLineas\Destino HC DimAeronave"
+          TopLeft="22,467" />
+        <EdgeLayout
+          Id="Package\ETL_BDAeroLineas.Paths[Salida de origen de OLE DB]"
+          TopLeft="121.25,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\ETL_BDAeroLineas\Origen de OLE DB 1"
+          TopLeft="280,338" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto"
+          TopLeft="282,467" />
+        <EdgeLayout
+          Id="Package\ETL_BDAeroLineas.Paths[Salida de origen de OLE DB1]"
+          TopLeft="366.5,380">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,87"
+              Start="0,0"
+              End="20,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="4,43.5" />
+                  <mssgle:LineSegment
+                    End="16,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,43.5"
+                    Point2="20,43.5"
+                    Point3="20,47.5" />
+                  <mssgle:LineSegment
+                    End="20,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL_BDAeroLineas\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL_BDAeroLineas\Destino HC DimAeronave">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL_BDAeroLineas\Origen de OLE DB 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL_BDAeroLineas\Destino HC Dim Aeropuerto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
