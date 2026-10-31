@@ -12,53 +12,37 @@
   DTS:ObjectName="SQL_HC"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{33757106-D42E-4419-919B-207CCED8D773}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{40BA0B43-AD6A-4263-AA8F-75BF2C11A092}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{7684D415-6871-453F-BEE2-FFE89420814A}"
+      DTS:DTSID="{CB2BDAC7-7146-472D-9F17-6340579CB4CD}"
       DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[$Project::BDAeroLineas_Excel]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Proyecto\ETL_AeroLineas\Excel\BDAeroLineas.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Proyectos\ETL_AeroLineas\Excel\BDAeroLineas.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas.sa]"
+      DTS:refId="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{14B2E0FC-24E7-449E-B535-47DBD1FE95D2}"
-      DTS:ObjectName="ARROYO\SQL2025.BDAerolineas.sa">
+      DTS:DTSID="{A40B3D11-486B-4156-A87B-CC45784556F4}"
+      DTS:ObjectName="ARROYO\SQL2025.BDAerolineas">
       <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Project::BDAeroLineas]</DTS:PropertyExpression>
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Huatay]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARROYO\SQL2025;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SQL_HC-{14B2E0FC-24E7-449E-B535-47DBD1FE95D2}ARROYO\SQL2025.BDAerolineas.sa;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0134876A-5A11-45CB-B20F-973E3399D0D1}"
-      DTS:ObjectName="PRIME-B550-MK\SQL2025.BDAerolineas.sa">
-      <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Project::BDAerolineas]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=PRIME-B550-MK\SQL2025;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SQL_HC-{0134876A-5A11-45CB-B20F-973E3399D0D1}PRIME-B550-MK\SQL2025.BDAerolineas.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=ARROYO\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{A40B3D11-486B-4156-A87B-CC45784556F4}ARROYO\SQL2025.BDAerolineas;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -283,8 +267,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
+                  connectionManagerID="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas]"
+                  connectionManagerRefId="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -450,7 +434,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="177.333333333334,42.6666666666667"
+          Size="177,43"
           Id="Package\Tarea Flujo de datos"
           TopLeft="183.124991813675,68.4210518803293" />
       </GraphLayout>
@@ -462,27 +446,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,42.6666666666667"
+          Size="164,42"
           Id="Package\Tarea Flujo de datos\Origen de OLE DB"
           TopLeft="74.9999977648259,82.9999975264073" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,43"
           Id="Package\Tarea Flujo de datos\Destino de Excel"
           TopLeft="76.9999977052213,193.99999421835" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
-          TopLeft="157.999997735024,125.666664193074">
+          TopLeft="156.999997735024,124.999997526407">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,68.3333300252757"
+              EndConnector="0,68.9999966919427"
               Start="0,0"
-              End="0,60.8333300252757">
+              End="0,61.4999966919427">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.8333300252757" />
+                    End="0,61.4999966919427" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
