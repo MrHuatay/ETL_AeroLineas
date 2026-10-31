@@ -5,15 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ARROYO"
   DTS:CreatorName="ARROYO\jsjho"
-  DTS:DTSID="{BAA3677B-31AD-43B9-8E76-415B5613BD94}"
+  DTS:DTSID="{75BFC4EA-BBD8-46D6-8789-D6087662FFE7}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="10250"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="SQL_HC"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{4EAA475E-0502-4132-96B4-9227FF9270AF}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{6205FC6C-9F2F-4127-A007-2B9CFC91E032}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
