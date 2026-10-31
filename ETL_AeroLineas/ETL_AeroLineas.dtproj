@@ -14,14 +14,14 @@
     <Manifest>
       <SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
-          <SSIS:Property SSIS:Name="ID">{c30104b0-ccfd-4e17-a5ad-72945eafd8b3}</SSIS:Property>
+          <SSIS:Property SSIS:Name="ID">{8c38d2c0-e443-4df0-af95-2a7f2641a3cf}</SSIS:Property>
           <SSIS:Property SSIS:Name="Name">ETL_AeroLineas</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionComments">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="CreationDate">2026-10-30T15:05:19.5618037-05:00</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreationDate">2026-10-30T20:02:07.7213105-05:00</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorName">ARROYO\jsjho</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">ARROYO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
@@ -29,22 +29,22 @@
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="SQL_HC.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters />
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="SQL_HC.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{577A9C75-07C6-42E6-BE05-8633E863F59F}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">SQL_HC</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{BAA3677B-31AD-43B9-8E76-415B5613BD94}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8E82D15C-514D-44D4-AADF-7A6F7E6E1BA0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4EAA475E-0502-4132-96B4-9227FF9270AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
