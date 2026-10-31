@@ -12,8 +12,8 @@
   DTS:ObjectName="SQL_HC"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{632263F7-7834-485F-A072-47EA999F4D70}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{33757106-D42E-4419-919B-207CCED8D773}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,21 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARROYO\SQL2025;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SQL_HC-{14B2E0FC-24E7-449E-B535-47DBD1FE95D2}ARROYO\SQL2025.BDAerolineas.sa;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=ARROYO\SQL2025;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SQL_HC-{14B2E0FC-24E7-449E-B535-47DBD1FE95D2}ARROYO\SQL2025.BDAerolineas.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0134876A-5A11-45CB-B20F-973E3399D0D1}"
+      DTS:ObjectName="PRIME-B550-MK\SQL2025.BDAerolineas.sa">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRIME-B550-MK\SQL2025;User ID=sa;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SQL_HC-{0134876A-5A11-45CB-B20F-973E3399D0D1}PRIME-B550-MK\SQL2025.BDAerolineas.sa;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"></DTS:Password>
@@ -269,8 +283,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas.sa]"
+                  connectionManagerID="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas.sa]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -436,7 +450,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="177,43"
+          Size="177.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos"
           TopLeft="183.124991813675,68.4210518803293" />
       </GraphLayout>
@@ -448,11 +462,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,43"
+          Size="168,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Origen de OLE DB"
           TopLeft="74.9999977648259,82.9999975264073" />
         <NodeLayout
-          Size="160,43"
+          Size="160,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Destino de Excel"
           TopLeft="76.9999977052213,193.99999421835" />
         <EdgeLayout
