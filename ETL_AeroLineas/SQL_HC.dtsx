@@ -12,8 +12,8 @@
   DTS:ObjectName="SQL_HC"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{C53962CC-6EEE-4FA8-A55C-D9AFDD952329}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{7A23FDA9-1683-4BCB-B0F4-4A83CA3E4B63}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
