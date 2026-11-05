@@ -1,0 +1,87 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/4/2026 11:35:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D1IGKQU"
+  DTS:CreatorName="DESKTOP-D1IGKQU\jaram"
+  DTS:DTSID="{06AD8112-48CD-479D-A227-76BB75535B29}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="SQL_SQL"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D964B48E-FD0F-4967-92BC-FAF7CF975FB3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ARROYO\SQL2025.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A40B3D11-486B-4156-A87B-CC45784556F4}"
+      DTS:ObjectName="ARROYO\SQL2025.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Huatay]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ARROYO\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{A40B3D11-486B-4156-A87B-CC45784556F4}ARROYO\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}"
+      DTS:ObjectName="DESKTOP-D1IGKQU\SQL2025.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Jaramillo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}DESKTOP-D1IGKQU\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-AR4IEGS7\SQL2026.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16757140-D2CA-44FE-AE11-1274CA979CA2}"
+      DTS:ObjectName="LAPTOP-AR4IEGS7\SQL2026.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Brigitte]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-AR4IEGS7\SQL2026;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{16757140-D2CA-44FE-AE11-1274CA979CA2}LAPTOP-AR4IEGS7\SQL2026.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BF6B40BA-8995-4FEC-9349-83F38666E0BA}"
+      DTS:ObjectName="PRIME-B550-MK\SQL2025.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Garcia]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PRIME-B550-MK\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{BF6B40BA-8995-4FEC-9349-83F38666E0BA}PRIME-B550-MK\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

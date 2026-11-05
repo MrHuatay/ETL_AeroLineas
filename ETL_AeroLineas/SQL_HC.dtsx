@@ -12,8 +12,8 @@
   DTS:ObjectName="SQL_HC"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{C3246D4B-24F4-44B2-B13F-76D0CE052B2D}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{0735B71F-744F-486E-9063-08068DC55A3F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,20 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ARROYO\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{A40B3D11-486B-4156-A87B-CC45784556F4}ARROYO\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}"
+      DTS:ObjectName="DESKTOP-D1IGKQU\SQL2025.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Jaramillo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}DESKTOP-D1IGKQU\SQL2025.BDAerolineas;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4181,15 +4195,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="164,177" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Tarea Flujo de datos"
           TopLeft="175.124991813675,298.421051880329" />
         <NodeLayout
-          Size="203.2,41.6"
+          Size="203,42"
           Id="Package\Tarea Sistema de archivos"
           TopLeft="134,38" />
         <EdgeLayout
@@ -4269,83 +4283,83 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Tarea Flujo de datos\Origen DimEstadoVuelo de BD"
           TopLeft="931.833295223615,24.6315786769185" />
         <NodeLayout
-          Size="160,43.2"
+          Size="160,43"
           Id="Package\Tarea Flujo de datos\Destino DimRuta"
           TopLeft="288.749987091869,351.807013915324" />
         <NodeLayout
-          Size="199.2,43.2"
+          Size="199,43"
           Id="Package\Tarea Flujo de datos\Destino DimEstadoVuelo"
           TopLeft="876.249960828574,129.999998572626" />
         <NodeLayout
-          Size="172.8,43.2"
+          Size="173,43"
           Id="Package\Tarea Flujo de datos\Destino DimTiempo"
           TopLeft="476.249978709967,353.175434952931" />
         <NodeLayout
-          Size="232.8,43.2"
+          Size="233,43"
           Id="Package\Tarea Flujo de datos\Destino DimFenomenoClimatico"
           TopLeft="12.4999994412065,349.771926211051" />
         <NodeLayout
-          Size="191.2,43.2"
+          Size="191,43"
           Id="Package\Tarea Flujo de datos\Destino DimAeropuerto"
           TopLeft="245.624989019707,127.947367016216" />
         <NodeLayout
-          Size="260.8,43.2"
+          Size="261,43"
           Id="Package\Tarea Flujo de datos\Origen DimFenomenoClimatico de BD"
           TopLeft="14.9999993294477,213.614032969195" />
         <NodeLayout
-          Size="191.2,43.2"
+          Size="191,43"
           Id="Package\Tarea Flujo de datos\Destino DimTripulacion"
           TopLeft="689.166642415027,346.89473303327" />
         <NodeLayout
-          Size="207.2,43.2"
+          Size="207,43"
           Id="Package\Tarea Flujo de datos\Destino DimCausaDemora"
           TopLeft="448.124979967252,131.368419610233" />
         <NodeLayout
-          Size="216,41.6"
+          Size="216,42"
           Id="Package\Tarea Flujo de datos\Origen DimAeropuerto de BD"
           TopLeft="254.999988600612,19.1578945264922" />
         <NodeLayout
-          Size="192.8,43.2"
+          Size="193,43"
           Id="Package\Tarea Flujo de datos\Origen DimClima de BD"
           TopLeft="725.624967562036,22.5789471205087" />
         <NodeLayout
-          Size="204.8,43.2"
+          Size="205,43"
           Id="Package\Tarea Flujo de datos\Destino FactDemoraVuelo"
           TopLeft="928.291633781667,345.385961464045" />
         <NodeLayout
-          Size="235.2,43.2"
+          Size="235,43"
           Id="Package\Tarea Flujo de datos\Origen DimCausaDemora de BD"
           TopLeft="481.874978458509,21.8947366017053" />
         <NodeLayout
-          Size="200.8,43.2"
+          Size="201,43"
           Id="Package\Tarea Flujo de datos\Origen DimTiempo de BD"
           TopLeft="488.749978151173,208.807015485436" />
         <NodeLayout
-          Size="232.8,43.2"
+          Size="233,43"
           Id="Package\Tarea Flujo de datos\Origen FactDemoraVuelo de BD"
           TopLeft="934.791631434735,208.543857703386" />
         <NodeLayout
-          Size="188,43.2"
+          Size="188,43"
           Id="Package\Tarea Flujo de datos\Origen DimRuta de BD"
           TopLeft="295.624986784533,213.596489117059" />
         <NodeLayout
-          Size="219.2,43.2"
+          Size="219,43"
           Id="Package\Tarea Flujo de datos\Origen DimTripulacion de BD"
           TopLeft="700.624968679622,208.684208235004" />
         <NodeLayout
-          Size="164.8,43.2"
+          Size="165,43"
           Id="Package\Tarea Flujo de datos\Destino DimClima"
           TopLeft="684.374969406055,131.368419610232" />
         <NodeLayout
-          Size="184,43.2"
+          Size="184,43"
           Id="Package\Tarea Flujo de datos\Destino DimAeronave"
           TopLeft="34.4999996051193,124.894731819217" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Tarea Flujo de datos\Origen DimAeronave de BD"
           TopLeft="18.1250003073364,15.9473666836846" />
         <EdgeLayout

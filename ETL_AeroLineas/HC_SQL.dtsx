@@ -12,15 +12,15 @@
   DTS:ObjectName="HC_SQL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{45731E7A-FEE0-4611-9E34-E97DA006AC0A}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{AF58124A-0CCD-4DF5-9F87-09CFA7114BA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{69CE0E00-6074-4A5E-9C08-5EB82EEB2A52}"
+      DTS:DTSID="{CB2BDAC7-7146-472D-9F17-6340579CB4CD}"
       DTS:ObjectName="Administrador de conexiones con Excel">
       <DTS:PropertyExpression
         DTS:Name="ExcelFilePath">@[$Project::BDAeroLineas_Excel]</DTS:PropertyExpression>
@@ -28,7 +28,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Proyectos\ETL_AeroLineas\Excel\BDAeroLineas.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Proyectos\ETL_AeroLineas\Excel\BDAeroLineas.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -43,6 +43,34 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ARROYO\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{A40B3D11-486B-4156-A87B-CC45784556F4}ARROYO\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}"
+      DTS:ObjectName="DESKTOP-D1IGKQU\SQL2025.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Jaramillo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{F81A68FC-59FB-48D0-89C5-4AF514A6BC0E}DESKTOP-D1IGKQU\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-AR4IEGS7\SQL2026.BDAerolineas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16757140-D2CA-44FE-AE11-1274CA979CA2}"
+      DTS:ObjectName="LAPTOP-AR4IEGS7\SQL2026.BDAerolineas">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAerolineas_Brigitte]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-AR4IEGS7\SQL2026;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{16757140-D2CA-44FE-AE11-1274CA979CA2}LAPTOP-AR4IEGS7\SQL2026.BDAerolineas;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -119,8 +147,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
-                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerID="{69CE0E00-6074-4A5E-9C08-5EB82EEB2A52}:invalid"
+                  connectionManagerRefId="{69CE0E00-6074-4A5E-9C08-5EB82EEB2A52}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -396,13 +424,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Excel Source"
-          TopLeft="258,134" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="244,260" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Data Flow Task\Excel Source"
+          TopLeft="258,134" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
           TopLeft="328.5,176">
