@@ -12,8 +12,8 @@
   DTS:ObjectName="SQL_SQL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{D964B48E-FD0F-4967-92BC-FAF7CF975FB3}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{92D1EEAC-6EC0-4ECB-A470-54331E545A2D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,20 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ARROYO\SQL2025;Initial Catalog=BDAerolineas;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_HC-{A40B3D11-486B-4156-A87B-CC45784556F4}ARROYO\SQL2025.BDAerolineas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAero]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8949B119-8BF9-4C81-A606-75ECC49F5250}"
+      DTS:ObjectName="DESKTOP-D1IGKQU\SQL2025.BDAero">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::BDAero_Jaramillo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAero;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_SQL-{8949B119-8BF9-4C81-A606-75ECC49F5250}DESKTOP-D1IGKQU\SQL2025.BDAero;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -75,7 +89,389 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{947A6E31-F74B-4B90-99C7-61DD0982C6A8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino DBAero (DimAeronave)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimAeronave]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAero]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAero]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveCodigo]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="DimAeronaveCodigo"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCodigo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveMatricula]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DimAeronaveMatricula"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveMatricula]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveModelo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DimAeronaveModelo"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveModelo]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      cachedDataType="i4"
+                      cachedName="DimAeronaveCapacidadPasajeros"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      cachedDataType="numeric"
+                      cachedName="DimAeronaveConsumoPromedioGalHora"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCodigo]"
+                      dataType="wstr"
+                      length="6"
+                      name="DimAeronaveCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveMatricula]"
+                      dataType="wstr"
+                      length="15"
+                      name="DimAeronaveMatricula" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveModelo]"
+                      dataType="wstr"
+                      length="50"
+                      name="DimAeronaveModelo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
+                      dataType="i4"
+                      name="DimAeronaveCapacidadPasajeros" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      name="DimAeronaveConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen DBAeroLineas (DimAeronave)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimAeronave]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCodigo]"
+                      length="6"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      name="DimAeronaveCodigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveMatricula]"
+                      length="15"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      name="DimAeronaveMatricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveModelo]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      name="DimAeronaveModelo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      name="DimAeronaveCapacidadPasajeros"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      name="DimAeronaveConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCodigo]"
+                      dataType="wstr"
+                      length="6"
+                      name="DimAeronaveCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveMatricula]"
+                      dataType="wstr"
+                      length="15"
+                      name="DimAeronaveMatricula" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveModelo]"
+                      dataType="wstr"
+                      length="50"
+                      name="DimAeronaveModelo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
+                      dataType="i4"
+                      name="DimAeronaveCapacidadPasajeros" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      name="DimAeronaveConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      name="DimAeronaveCodigo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      name="DimAeronaveMatricula" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      name="DimAeronaveModelo" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      name="DimAeronaveCapacidadPasajeros" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      name="DimAeronaveConsumoPromedioGalHora"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -83,5 +479,93 @@
 <Objects
   Version="8">
   <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="288,84" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave)"
+          TopLeft="33,25" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave)"
+          TopLeft="35,176" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="159.5,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,109"
+              Start="0,0"
+              End="-11,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="-4,54.5" />
+                  <mssgle:LineSegment
+                    End="-7,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,54.5"
+                    Point2="-11,54.5"
+                    Point3="-11,58.5" />
+                  <mssgle:LineSegment
+                    End="-11,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
