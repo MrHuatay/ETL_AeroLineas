@@ -12,8 +12,8 @@
   DTS:ObjectName="SQL_SQL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{3883DBD3-5F99-4971-A8E1-4D61C87A36AA}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{BA315F29-CB16-41C8-B2B5-3091DE809658}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -196,27 +196,27 @@
                       cachedLength="6"
                       cachedName="DimAeronaveCodigo"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCodigo]"
-                      lineageId="Package\Tarea Flujo de datos\41:invalid" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveMatricula]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="DimAeronaveMatricula"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveMatricula]"
-                      lineageId="Package\Tarea Flujo de datos\42:invalid" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveModelo]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DimAeronaveModelo"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveModelo]"
-                      lineageId="Package\Tarea Flujo de datos\43:invalid" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
                       cachedDataType="i4"
                       cachedName="DimAeronaveCapacidadPasajeros"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
-                      lineageId="Package\Tarea Flujo de datos\44:invalid" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
                       cachedDataType="numeric"
@@ -224,7 +224,7 @@
                       cachedPrecision="8"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave).Inputs[Entrada de destino de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
-                      lineageId="Package\Tarea Flujo de datos\45:invalid" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -332,8 +332,8 @@
               <connections>
                 <connection
                   refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas]"
-                  connectionManagerRefId="Package.ConnectionManagers[PRIME-B550-MK\SQL2025.BDAerolineas]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-D1IGKQU\SQL2025.BDAerolineas]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -343,52 +343,52 @@
                   name="Salida de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[IdAeronavePK]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeronavePK]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCodigo]"
                       length="6"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[IdAeronavePK]"
-                      name="IdAeronavePK"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      name="DimAeronaveCodigo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[Matricula]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[Matricula]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveMatricula]"
                       length="15"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[Matricula]"
-                      name="Matricula"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      name="DimAeronaveMatricula"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[Modelo]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[Modelo]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveModelo]"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[Modelo]"
-                      name="Modelo"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      name="DimAeronaveModelo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadPasajeros]"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[CapacidadPasajeros]"
-                      name="CapacidadPasajeros"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      name="DimAeronaveCapacidadPasajeros"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[ConsumoPromedioGalHora]"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
-                      name="ConsumoPromedioGalHora"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      name="DimAeronaveConsumoPromedioGalHora"
                       precision="8"
                       scale="2"
                       truncationRowDisposition="FailComponent" />
@@ -396,28 +396,28 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[IdAeronavePK]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCodigo]"
                       dataType="wstr"
                       length="6"
-                      name="IdAeronavePK" />
+                      name="DimAeronaveCodigo" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[Matricula]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveMatricula]"
                       dataType="wstr"
                       length="15"
-                      name="Matricula" />
+                      name="DimAeronaveMatricula" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[Modelo]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveModelo]"
                       dataType="wstr"
                       length="50"
-                      name="Modelo" />
+                      name="DimAeronaveModelo" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[CapacidadPasajeros]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveCapacidadPasajeros]"
                       dataType="i4"
-                      name="CapacidadPasajeros" />
+                      name="DimAeronaveCapacidadPasajeros" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[ConsumoPromedioGalHora]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de origen de OLE DB].ExternalColumns[DimAeronaveConsumoPromedioGalHora]"
                       dataType="numeric"
-                      name="ConsumoPromedioGalHora"
+                      name="DimAeronaveConsumoPromedioGalHora"
                       precision="8"
                       scale="2" />
                   </externalMetadataColumns>
@@ -428,33 +428,33 @@
                   name="Salida de error de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[IdAeronavePK]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCodigo]"
                       dataType="wstr"
                       length="6"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[IdAeronavePK]"
-                      name="IdAeronavePK" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCodigo]"
+                      name="DimAeronaveCodigo" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[Matricula]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveMatricula]"
                       dataType="wstr"
                       length="15"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[Matricula]"
-                      name="Matricula" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveMatricula]"
+                      name="DimAeronaveMatricula" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[Modelo]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveModelo]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[Modelo]"
-                      name="Modelo" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveModelo]"
+                      name="DimAeronaveModelo" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[CapacidadPasajeros]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[CapacidadPasajeros]"
-                      name="CapacidadPasajeros" />
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveCapacidadPasajeros]"
+                      name="DimAeronaveCapacidadPasajeros" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
+                      refId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
                       dataType="numeric"
-                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[ConsumoPromedioGalHora]"
-                      name="ConsumoPromedioGalHora"
+                      lineageId="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave).Outputs[Salida de error de origen de OLE DB].Columns[DimAeronaveConsumoPromedioGalHora]"
+                      name="DimAeronaveConsumoPromedioGalHora"
                       precision="8"
                       scale="2" />
                     <outputColumn
@@ -509,13 +509,13 @@
     design-time-name="Package\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="226.666666666667,42"
+          Size="227,42"
           Id="Package\Tarea Flujo de datos\Destino DBAero (DimAeronave)"
           TopLeft="35,176" />
         <NodeLayout
-          Size="253.333333333334,42"
+          Size="253,42"
           Id="Package\Tarea Flujo de datos\Origen DBAeroLineas (DimAeronave)"
           TopLeft="33,25" />
         <EdgeLayout
@@ -549,9 +549,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.5,59.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
