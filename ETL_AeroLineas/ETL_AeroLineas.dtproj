@@ -1377,10 +1377,10 @@
                 <SSIS:Property SSIS:Name="Name">SQL_SQL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">33</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3883DBD3-5F99-4971-A8E1-4D61C87A36AA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8422B496-44B6-47BE-99AE-31B5AAFAA7AC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1546,7 +1546,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAero;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_SQL-{8949B119-8BF9-4C81-A606-75ECC49F5250}DESKTOP-D1IGKQU\SQL2025.BDAero;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-D1IGKQU\SQL2025;Initial Catalog=BDAero;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SQL_SQL-{94AF6361-BB9B-4509-8305-520CD663A8DB}DESKTOP-D1IGKQU\SQL2025.BDAero;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
